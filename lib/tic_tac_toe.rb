@@ -91,6 +91,8 @@ end
     !won? && full?
   end
 
-
+  def over?
+    
+  end 
     
 end 
