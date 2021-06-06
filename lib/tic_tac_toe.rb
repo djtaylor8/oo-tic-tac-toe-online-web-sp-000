@@ -1,6 +1,5 @@
 class TicTacToe
   
-  
   def initialize
     @board = Array.new(9, " ")
   end
@@ -40,15 +39,15 @@ WIN_COMBINATIONS =[
     index.between?(0,8) && !position_taken?(index)
   end
 
-def turn_count
-  counter = 0 
-  @board.each do |space| 
-    if space == "X" || space == "O"
+  def turn_count
+    counter = 0 
+    @board.each do |space| 
+     if space == "X" || space == "O"
       counter += 1 
+     end
     end
+    counter
   end
-  counter
-end
 
   def current_player
     turn_count.even? ? "X" : "O"
@@ -81,7 +80,7 @@ end
      position_1 == position_2 && 
      position_taken?(win_index_0)
     end
-   end
+  end
    
   def full?
     @board.all?{|index| index != " "} 
@@ -102,14 +101,14 @@ end
   end
   
   def play
-  until over?
-   turn
+    until over?
+     turn
+    end
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
+    end
   end
-  if won?
-    puts "Congratulations #{winner}!"
-  elsif draw?
-    puts "Cat's Game!"
-  end
-end
     
 end 
