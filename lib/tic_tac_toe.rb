@@ -87,8 +87,8 @@ end
     @board.all?{|index| index != " "} 
   end
   
-  def draw
- !won? && full?
+  def draw?
+    !won? && full?
   end
 
 
