@@ -95,6 +95,10 @@ end
     won? || draw?
   end
   
-  def winner 
+  def winner
+    if win_combo = won?
+    @board[win_combination[0]]
+  end
+end 
     
 end 
